@@ -4,8 +4,13 @@
  * Module dependencies.
  */
 
-const debug = require('debug')('express-template:server');
+require('dotenv').config();
+
+const debug = require('debug')('node-red-template:server');
 const http = require('http');
+const RED = require('node-red');
+const bcryptjs = require('bcryptjs');
+const createError = require('http-errors');
 const app = require('../app');
 
 /**
@@ -21,6 +26,58 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
+// Create the settings object - see default settings.js file for other options
+const settings = {
+  httpAdminRoot: '/red',
+  httpNodeRoot: '/api',
+  userDir: './.node-red/',
+  flowFile: 'flows.json',
+  functionGlobalContext: {
+    THINGSPEAK_CHANNEL_ID: process.env.THINGSPEAK_CHANNEL_ID,
+    THINGSPEAK_WRITE_KEY: process.env.THINGSPEAK_WRITE_KEY,
+    THINGSPEAK_READ_KEY: process.env.THINGSPEAK_READ_KEY,
+    IFTTT_URL: process.env.IFTTT_URL,
+  }, // enables global context
+  adminAuth: {
+    type: 'credentials',
+    users: [
+      {
+        username: process.env.NODERED_USERNAME,
+        password: bcryptjs.hashSync(process.env.NODERED_PASSWORD, 8),
+        permissions: '*',
+      },
+    ],
+  },
+};
+
+// Initialise the runtime with a server and settings
+RED.init(server, settings);
+
+// NOTE: RED.httpAdmin and RED.httpNode only valid after 'init', so I have to move
+// error handling route from file 'app.js' to this file
+
+// Serve the editor UI from /red
+app.use(settings.httpAdminRoot, RED.httpAdmin);
+
+// Serve the http nodes UI from /api
+app.use(settings.httpNodeRoot, RED.httpNode);
+
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+  next(createError(404));
+});
+
+// error handler
+app.use((err, req, res, next) => {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -28,6 +85,9 @@ const server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+// Start the runtime
+RED.start();
 
 /**
  * Normalize a port into a number, string, or false.
