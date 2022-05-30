@@ -18,8 +18,20 @@ yarn
 Run the development server:
 
 ```bash
-yarn dev
+yarn start
 ```
+
+OR
+
+Run with `nodemon`:
+
+```bash
+yarn test
+```
+
+> *Nodemon is a utility depended on by over 1.5 million projects, that will
+> monitor for any changes in your source and automatically restart your server.
+> Perfect for development.*
 
 ## First setup:
 
@@ -45,7 +57,7 @@ Read more about customizing user and other ways to generate password: [Securing 
 
 - Then, you can run server:
 ```bash
-yarn dev
+yarn start
 ```
 
 > NOTE: You change tweak Node-RED settings in file `bin/www`
