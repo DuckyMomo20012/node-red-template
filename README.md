@@ -106,9 +106,9 @@
 
 ### :dart: Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Feature 1.
+- Feature 2.
+- Feature 3.
 
 <!-- Color Reference -->
 
@@ -145,6 +145,9 @@ Read more about customizing users and other ways to generate passwords:
 [Securing Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red#editor--admin-api-security)
 
 > NOTE: You change tweak Node-RED settings in file `bin/www`.
+
+You can also checkout file `.env.example` to see all required environment
+variables.
 
 <!-- Getting Started -->
 
@@ -214,7 +217,7 @@ yarn start
 
 OR
 
-Run with `nodemon`:
+Run with `nodemon`
 
 ```bash
 yarn test
@@ -304,15 +307,15 @@ userDir: './.node-red-store', // relative to root folder, default $HOME/.node-re
 
 ## :compass: Roadmap
 
-- [x] Todo 1
-- [ ] Todo 2
+- [x] Todo 1.
+- [ ] Todo 2.
 
 <!-- Contributing -->
 
 ## :wave: Contributing
 
-<a href="https://github.com/DuckyMomo20012/react-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=DuckyMomo20012/react-template" />
+<a href="https://github.com/DuckyMomo20012/node-red-template/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DuckyMomo20012/node-red-template" />
 </a>
 
 Contributions are always welcome!
@@ -329,11 +332,11 @@ Please read the [Code of Conduct](https://github.com/DuckyMomo20012/node-red-tem
 
 - Question 1
 
-  - Answer 1
+  - Answer 1.
 
 - Question 2
 
-  - Answer 2
+  - Answer 2.
   <!-- License -->
 
 ## :warning: License
