@@ -125,7 +125,8 @@
 
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to
+your .env file.
 
 `NODERED_USERNAME`: Username to log in to Node-RED editor.
 
@@ -157,7 +158,7 @@ variables.
 
 ### :bangbang: Prerequisites
 
-This project uses [Yarn](https://yarnpkg.com/) as package manager
+This project uses [Yarn](https://yarnpkg.com/) as package manager:
 
 ```bash
 npm install --global yarn
@@ -167,7 +168,7 @@ npm install --global yarn
 
 ### :gear: Installation
 
-Install node-red-template with npm
+Install node-red-template with yarn:
 
 ```bash
 yarn install node-red-template
@@ -178,7 +179,7 @@ cd node-red-template
 
 ### :test_tube: Running Tests
 
-To run tests, run the following command
+To run tests, run the following command:
 
 ```bash
 yarn test test
@@ -188,28 +189,25 @@ yarn test test
 
 ### :running: Run Locally
 
-Clone the project
+Clone the project:
 
 ```bash
 git clone https://github.com/DuckyMomo20012/node-red-template.git
 ```
 
-Go to the project directory
+Go to the project directory:
 
 ```bash
 cd node-red-template
 ```
 
-Install dependencies
+Install dependencies:
 
 ```bash
 yarn install
 ```
 
-> If you have error: "node" is incompatible... Then add flag:
-> `--ignore-engines`. E.g: `yarn add --ignore-engines PACKAGE_NAME`.
-
-Start the server
+Start the server:
 
 ```bash
 yarn start
@@ -217,7 +215,7 @@ yarn start
 
 OR
 
-Run with `nodemon`
+Run with `nodemon`:
 
 ```bash
 yarn test
@@ -227,7 +225,7 @@ yarn test
 
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project on Heroku
+To deploy this project on Heroku:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -281,7 +279,7 @@ To deploy this project on Heroku
 - Change the web title in the`dashboard/site` tab (on the right-side panel).
 - Change the web main color theme in the `dashboard/theme` tab.
 
-### Deploy flow:
+### Deploy flow
 
 - Click the `Deploy` button in the Node-RED editor to deploy flow.
 - After deploying, your flow will be saved in the `.node-red` folder.
@@ -324,7 +322,7 @@ Contributions are always welcome!
 
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/DuckyMomo20012/node-red-template/blob/main/CODE_OF_CONDUCT.md)
+Please read the [Code of Conduct](https://github.com/DuckyMomo20012/node-red-template/blob/main/CODE_OF_CONDUCT.md).
 
 <!-- FAQ -->
 
@@ -341,7 +339,9 @@ Please read the [Code of Conduct](https://github.com/DuckyMomo20012/node-red-tem
 
 ## :warning: License
 
-Distributed under MIT license. See [LICENSE](https://github.com/DuckyMomo20012/node-red-template/blob/main/LICENSE) for more information.
+Distributed under MIT license. See
+[LICENSE](https://github.com/DuckyMomo20012/node-red-template/blob/main/LICENSE)
+for more information.
 
 <!-- Contact -->
 
@@ -349,13 +349,13 @@ Distributed under MIT license. See [LICENSE](https://github.com/DuckyMomo20012/n
 
 Duong Vinh - [@duckymomo20012](https://twitter.com/duckymomo20012) - tienvinh.duong4@gmail.com
 
-Project Link: [https://github.com/DuckyMomo20012/node-red-template](https://github.com/DuckyMomo20012/node-red-template)
+Project Link: [https://github.com/DuckyMomo20012/node-red-template](https://github.com/DuckyMomo20012/node-red-template).
 
 <!-- Acknowledgments -->
 
 ## :gem: Acknowledgements
 
-Here are useful resources and libraries that we have used in our projects.
+Here are useful resources and libraries that we have used in our projects:
 
 - [Node-RED](https://nodered.org/): A powerful tool to build IoT applications.
 - [Awesome Readme Template](https://github.com/Louis3797/awesome-readme-template):
