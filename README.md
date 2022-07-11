@@ -54,9 +54,8 @@
   - [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
   - [Prerequisites](#bangbang-prerequisites)
-  - [Installation](#gear-installation)
-  - [Running Tests](#test_tube-running-tests)
   - [Run Locally](#running-run-locally)
+  - [Running Tests](#test_tube-running-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [Usage](#eyes-usage)
   - [Access Node-RED editor](#access-node-red-editor)
@@ -164,27 +163,6 @@ This project uses [Yarn](https://yarnpkg.com/) as package manager:
 npm install --global yarn
 ```
 
-<!-- Installation -->
-
-### :gear: Installation
-
-Install node-red-template with yarn:
-
-```bash
-yarn install node-red-template
-cd node-red-template
-```
-
-<!-- Running Tests -->
-
-### :test_tube: Running Tests
-
-To run tests, run the following command:
-
-```bash
-yarn test test
-```
-
 <!-- Run Locally -->
 
 ### :running: Run Locally
@@ -204,7 +182,7 @@ cd node-red-template
 Install dependencies:
 
 ```bash
-yarn install
+yarn
 ```
 
 Start the server:
@@ -221,6 +199,22 @@ Run with `nodemon`:
 yarn test
 ```
 
+---
+
+Access server:
+
+The server will run on: http://127.0.0.1:3000/red/
+
+<!-- Running Tests -->
+
+### :test_tube: Running Tests
+
+To run tests, run the following command:
+
+```bash
+yarn test test
+```
+
 <!-- Deployment -->
 
 ### :triangular_flag_on_post: Deployment
@@ -235,7 +229,7 @@ To deploy this project on Heroku:
 
 ### Access Node-RED editor
 
-- Go to `http://127.0.0.1:1880/red/` to view the Node-RED editor.
+- Go to `http://127.0.0.1:3000/red/` to view the Node-RED editor.
 
   <details>
   <summary>Customizing Node-RED editor route</summary>
@@ -252,7 +246,7 @@ To deploy this project on Heroku:
 
 > NOTE: Remember to deploy flow before accessing these routes.
 
-- Go to `http://127.0.0.1:1880/api/ui/` to view web UI (from
+- Go to `http://127.0.0.1:3000/api/ui/` to view web UI (from
   node-red-dashboard node).
 
   <details>
