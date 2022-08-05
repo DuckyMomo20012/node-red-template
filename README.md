@@ -125,11 +125,13 @@
 ### :key: Environment Variables
 
 To run this project, you will need to add the following environment variables to
-your .env file.
+your `.env` file:
 
-`NODERED_USERNAME`: Username to log in to Node-RED editor.
+- **Node-RED configs:**
 
-`NODERED_PASSWORD`: Password to login to Node-RED editor.
+  `NODERED_USERNAME`: Username to log in to Node-RED editor.
+
+  `NODERED_PASSWORD`: Password to login to Node-RED editor.
 
 E.g:
 
