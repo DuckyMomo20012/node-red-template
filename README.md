@@ -58,10 +58,10 @@
   - [Running Tests](#test_tube-running-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [Usage](#eyes-usage)
-  - [Access Node-RED editor](#access-node-red-editor)
-  - [Import flow](#import-flow)
-  - [Node-RED dashboard first setups](#node-red-dashboard-first-setups)
-  - [Deploy flow](#deploy-flow)
+  - [Access Node-RED editor](#fast_forward-access-node-red-editor)
+  - [Import flow](#inbox_tray-import-flow)
+  - [Node-RED dashboard first setups](#one-node-red-dashboard-first-setups)
+  - [Deploy flow](#rocket-deploy-flow)
 - [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
   - [Code of Conduct](#scroll-code-of-conduct)
@@ -138,13 +138,13 @@ NODERED_USERNAME=admin
 NODERED_PASSWORD=password
 ```
 
-> `NODERED_USERNAME` and `NODERED_PASSWORD` is **used for default user**
-> (admin). You can add another users in file `bin/www`.
+> **Note**: `NODERED_USERNAME` and `NODERED_PASSWORD` is **used for default
+> user** (admin). You can add another users in file `bin/www`.
 
 Read more about customizing users and other ways to generate passwords:
 [Securing Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red#editor--admin-api-security)
 
-> NOTE: You change tweak Node-RED settings in file `bin/www`.
+> **Note**: You change tweak Node-RED settings in file `bin/www`.
 
 You can also checkout file `.env.example` to see all required environment
 variables.
@@ -191,7 +191,7 @@ Start the server:
 yarn start
 ```
 
-OR
+OR:
 
 Run with `nodemon`:
 
@@ -227,7 +227,7 @@ To deploy this project on Heroku:
 
 ## :eyes: Usage
 
-### Access Node-RED editor
+### :fast_forward: Access Node-RED editor
 
 - Go to `http://127.0.0.1:3000/red/` to view the Node-RED editor.
 
@@ -244,7 +244,7 @@ To deploy this project on Heroku:
 
   </details>
 
-> NOTE: Remember to deploy flow before accessing these routes.
+> **Note**: Remember to deploy flow before accessing these routes.
 
 - Go to `http://127.0.0.1:3000/api/ui/` to view web UI (from
   node-red-dashboard node).
@@ -262,25 +262,25 @@ To deploy this project on Heroku:
 
   </details>
 
-### Import flow
+### :inbox_tray: Import flow
 
 - Go to the hamburger button on the top right of the editor.
 - Click the `Import` button.
 - Then import file `flows.json` from folder `data`.
 
-### Node-RED dashboard first setups
+### :one: Node-RED dashboard first setups
 
 - Change the web title in the`dashboard/site` tab (on the right-side panel).
 - Change the web main color theme in the `dashboard/theme` tab.
 
-### Deploy flow
+### :rocket: Deploy flow
 
 - Click the `Deploy` button in the Node-RED editor to deploy flow.
 - After deploying, your flow will be saved in the `.node-red` folder.
 
-> File `flow.json` in the `.node-red` folder will be loaded for the next server
-> run. So you can push this `.node-red` folder to your repo to save your work,
-> instead of importing the file `flow.json` manually.
+> **Note**: File `flow.json` in the `.node-red` folder will be loaded for the
+> next server run. So you can push this `.node-red` folder to your repo to save
+> your work, instead of importing the file `flow.json` manually.
 
 <details>
 <summary>Customizing Node-RED user directory</summary>
