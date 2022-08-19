@@ -3,7 +3,7 @@
   <h1>Node-RED Template</h1>
 
   <p>
-    A Node-RED embedded to ExpressJS template
+    A Node-RED embedded into ExpressJS template
   </p>
 
 <!-- Badges -->
@@ -58,6 +58,7 @@
   - [Running Tests](#test_tube-running-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [Usage](#eyes-usage)
+  - [Customize Node-RED](#gear-customize-node-red)
   - [Access Node-RED editor](#fast_forward-access-node-red-editor)
   - [Import flow](#inbox_tray-import-flow)
   - [Node-RED dashboard first setups](#one-node-red-dashboard-first-setups)
@@ -140,15 +141,15 @@ NODERED_USERNAME=admin
 NODERED_PASSWORD=password
 ```
 
-> **Note**: `NODERED_USERNAME` and `NODERED_PASSWORD` is **used for default
-> user** (admin). You can add another users in file `bin/www`.
+> **Note**: `NODERED_USERNAME` and `NODERED_PASSWORD` is **used for admin
+> user**. You can add other users in the file `bin/www`.
 
 Read more about customizing users and other ways to generate passwords:
-[Securing Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red#editor--admin-api-security)
+[Securing Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red#editor--admin-api-security).
 
 > **Note**: You change tweak Node-RED settings in file `bin/www`.
 
-You can also checkout file `.env.example` to see all required environment
+You can also check out the file `.env.example` to see all required environment
 variables.
 
 <!-- Getting Started -->
@@ -229,40 +230,84 @@ To deploy this project on Heroku:
 
 ## :eyes: Usage
 
+<!-- Customize Node-RED -->
+
+### :gear: Customize Node-RED
+
+- You can custom your Node-RED configuration in file `bin/www`.
+
+  - `httpAdminRoot`: the root URL for the editor UI. If set to false, all admin
+    endpoints are disabled. This includes both API endpoints and the editor UI. To
+    disable just the editor UI, see the disableEditor property below. Default:
+    `/`.
+
+  - `httpNodeRoot`: the root URL for nodes that provide HTTP endpoints. If set to
+    false, all node-based HTTP endpoints are disabled. Default: `/`.
+
+  - `userDir`: the directory to store all user data, such as flow and credential
+    files and all library data. Default: `$HOME/.node-red`.
+
+  - `flowFile`: the file used to store the flows. Default:
+    `flows_<hostname>.json`.
+
+  - `functionGlobalContext`: Function Nodes - a collection of objects to attach
+    to the global function context. For example,
+
+  ```javascript
+  functionGlobalContext: {
+    osModule: require('os');
+  }
+  ```
+
+  can be accessed in a function node as:
+
+  ```javascript
+  var myos = global.get('osModule');
+  ```
+
+  - `adminAuth`: enables user-level security in the editor and admin API. See
+    [Securing
+    Node-RED](https://nodered.org/docs/user-guide/runtime/securing-node-red) for
+    more information.
+
+- This template configure these settings:
+
+  ```javascript
+  const settings = {
+    httpAdminRoot: '/red',
+    httpNodeRoot: '/api',
+    userDir: './.node-red/',
+    flowFile: 'flows.json',
+    functionGlobalContext: {}, // enables global context
+    adminAuth: {
+      type: 'credentials',
+      users: [
+        // This is admin user credentials
+        {
+          username: process.env.NODERED_USERNAME,
+          password: bcryptjs.hashSync(process.env.NODERED_PASSWORD, 8),
+          permissions: '*',
+        },
+      ],
+    },
+  };
+  ```
+
+> **Note**: Read more about Node-RED configuration: [Runtime
+> Configuration](https://nodered.org/docs/user-guide/runtime/configuration).
+
+<!-- Access Node-RED editor -->
+
 ### :fast_forward: Access Node-RED editor
 
 - Go to `http://127.0.0.1:3000/red/` to view the Node-RED editor.
 
-  <details>
-  <summary>Customizing Node-RED editor route</summary>
-
-  ```javascript
-  // bin/www
-  const settings = {
-  httpAdminRoot: '/editor',
-  ...
-  };
-  ```
-
-  </details>
-
-> **Note**: Remember to deploy flow before accessing these routes.
-
 - Go to `http://127.0.0.1:3000/api/ui/` to view web UI (from
   node-red-dashboard node).
 
-  <details>
-  <summary>Customizing Node-RED node route</summary>
+> **Note**: Remember to deploy your flow before accessing node routes.
 
-  ```javascript
-  // bin/www
-  const settings = {
-  httpNodeRoot: '/',
-  ...
-  };
-  ```
-
-  </details>
+<!-- Import flow -->
 
 ### :inbox_tray: Import flow
 
@@ -270,10 +315,14 @@ To deploy this project on Heroku:
 - Click the `Import` button.
 - Then import file `flows.json` from folder `data`.
 
+<!-- Node-RED dashboard first setups -->
+
 ### :one: Node-RED dashboard first setups
 
-- Change the web title in the`dashboard/site` tab (on the right-side panel).
+- Change the web title in the `dashboard/site` tab (on the right-side panel).
 - Change the web main color theme in the `dashboard/theme` tab.
+
+<!-- Deploy flow -->
 
 ### :rocket: Deploy flow
 
@@ -283,19 +332,6 @@ To deploy this project on Heroku:
 > **Note**: File `flow.json` in the `.node-red` folder will be loaded for the
 > next server run. So you can push this `.node-red` folder to your repo to save
 > your work, instead of importing the file `flow.json` manually.
-
-<details>
-<summary>Customizing Node-RED user directory</summary>
-
-```javascript
-// bin/www
-const settings = {
-userDir: './.node-red-store', // relative to root folder, default $HOME/.node-red
-...
-};
-```
-
-</details>
 
 <!-- Roadmap -->
 

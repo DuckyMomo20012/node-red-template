@@ -32,15 +32,11 @@ const settings = {
   httpNodeRoot: '/api',
   userDir: './.node-red/',
   flowFile: 'flows.json',
-  functionGlobalContext: {
-    THINGSPEAK_CHANNEL_ID: process.env.THINGSPEAK_CHANNEL_ID,
-    THINGSPEAK_WRITE_KEY: process.env.THINGSPEAK_WRITE_KEY,
-    THINGSPEAK_READ_KEY: process.env.THINGSPEAK_READ_KEY,
-    IFTTT_URL: process.env.IFTTT_URL,
-  }, // enables global context
+  functionGlobalContext: {}, // enables global context
   adminAuth: {
     type: 'credentials',
     users: [
+      // This is admin user credentials
       {
         username: process.env.NODERED_USERNAME,
         password: bcryptjs.hashSync(process.env.NODERED_PASSWORD, 8),
