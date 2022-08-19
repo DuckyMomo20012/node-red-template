@@ -199,7 +199,7 @@ OR:
 Run with `nodemon`:
 
 ```bash
-yarn test
+yarn dev
 ```
 
 ---
@@ -215,7 +215,7 @@ The server will run on: http://127.0.0.1:3000/red/
 To run tests, run the following command:
 
 ```bash
-yarn test test
+yarn test
 ```
 
 <!-- Deployment -->
@@ -253,17 +253,17 @@ To deploy this project on Heroku:
   - `functionGlobalContext`: Function Nodes - a collection of objects to attach
     to the global function context. For example,
 
-  ```javascript
-  functionGlobalContext: {
-    osModule: require('os');
-  }
-  ```
+    ```javascript
+    functionGlobalContext: {
+      osModule: require('os');
+    }
+    ```
 
-  can be accessed in a function node as:
+    can be accessed in a function node as:
 
-  ```javascript
-  var myos = global.get('osModule');
-  ```
+    ```javascript
+    var myos = global.get('osModule');
+    ```
 
   - `adminAuth`: enables user-level security in the editor and admin API. See
     [Securing
