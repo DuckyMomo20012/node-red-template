@@ -8,7 +8,6 @@
 
 <!-- Badges -->
 <p>
-
   <a href="https://github.com/DuckyMomo20012/node-red-template/graphs/contributors">
     <img src="https://img.shields.io/github/contributors/DuckyMomo20012/node-red-template" alt="contributors" />
   </a>
@@ -207,7 +206,7 @@ yarn dev
 
 Access server:
 
-The server will run on: http://127.0.0.1:3000/red/
+The server will run on: http://localhost:3000/red/
 
 <!-- Running Tests -->
 
@@ -302,9 +301,9 @@ To deploy this project on Heroku:
 
 ### :fast_forward: Access Node-RED editor
 
-- Go to `http://127.0.0.1:3000/red/` to view the Node-RED editor.
+- Go to `http://localhost:3000/red/` to view the Node-RED editor.
 
-- Go to `http://127.0.0.1:3000/api/ui/` to view web UI (from
+- Go to `http://localhost:3000/api/ui/` to view web UI (from
   node-red-dashboard node).
 
 > **Note**: Remember to deploy your flow before accessing node routes.
@@ -369,7 +368,8 @@ Please read the [Code of Conduct](https://github.com/DuckyMomo20012/node-red-tem
 - Question 2
 
   - Answer 2.
-  <!-- License -->
+
+<!-- License -->
 
 ## :warning: License
 
@@ -381,7 +381,8 @@ for more information.
 
 ## :handshake: Contact
 
-Duong Vinh - [@duckymomo20012](https://twitter.com/duckymomo20012) - tienvinh.duong4@gmail.com
+Duong Vinh - [@duckymomo20012](https://twitter.com/duckymomo20012) -
+tienvinh.duong4@gmail.com
 
 Project Link: [https://github.com/DuckyMomo20012/node-red-template](https://github.com/DuckyMomo20012/node-red-template).
 
