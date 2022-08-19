@@ -114,12 +114,12 @@
 
 ### :art: Color Reference
 
-| Color           | Hex                                                             |
-| --------------- | --------------------------------------------------------------- |
-| Primary Color   | ![#222831](http://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](http://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color    | ![#00ADB5](http://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color      | ![#EEEEEE](http://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+| Color           | Hex                                                              |
+| --------------- | ---------------------------------------------------------------- |
+| Primary Color   | ![#222831](https://placehold.jp/222831/222831/10x10.png) #222831 |
+| Secondary Color | ![#393E46](https://placehold.jp/393E46/393E46/10x10.png) #393E46 |
+| Accent Color    | ![#00ADB5](https://placehold.jp/00ADB5/00ADB5/10x10.png) #00ADB5 |
+| Text Color      | ![#EEEEEE](https://placehold.jp/EEEEEE/EEEEEE/10x10.png) #EEEEEE |
 
 <!-- Env Variables -->
 
@@ -137,6 +137,7 @@ your `.env` file:
 E.g:
 
 ```
+# .env
 NODERED_USERNAME=admin
 NODERED_PASSWORD=password
 ```
@@ -273,6 +274,7 @@ To deploy this project on Heroku:
 - This template configure these settings:
 
   ```javascript
+  // bin/www
   const settings = {
     httpAdminRoot: '/red',
     httpNodeRoot: '/api',
