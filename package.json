@@ -17,17 +17,17 @@
     "jade": "1.11.0",
     "morgan": "1.10.0",
     "node-red": "3.0.2",
-    "node-red-dashboard": "3.2.3"
+    "node-red-dashboard": "3.3.1"
   },
   "devDependencies": {
-    "@babel/core": "7.20.5",
-    "babel-loader": "9.1.0",
-    "eslint": "8.29.0",
+    "@babel/core": "7.20.12",
+    "babel-loader": "9.1.2",
+    "eslint": "8.31.0",
     "eslint-config-airbnb-base": "15.0.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-import": "2.26.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-plugin-import": "2.27.4",
     "eslint-plugin-prettier": "4.2.1",
     "nodemon": "2.0.20",
-    "prettier": "2.8.1"
+    "prettier": "2.8.2"
   }
 }
