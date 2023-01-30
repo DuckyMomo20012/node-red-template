@@ -160,10 +160,10 @@ variables.
 
 ### :bangbang: Prerequisites
 
-This project uses [Yarn](https://yarnpkg.com/) as package manager:
+This project uses [pnpm](https://pnpm.io/) as package manager:
 
 ```bash
-npm install --global yarn
+npm install --global pnpm
 ```
 
 <!-- Run Locally -->
@@ -185,13 +185,13 @@ cd node-red-template
 Install dependencies:
 
 ```bash
-yarn
+pnpm install
 ```
 
 Start the server:
 
 ```bash
-yarn start
+pnpm start
 ```
 
 OR:
@@ -199,7 +199,7 @@ OR:
 Run with `nodemon`:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 ---
@@ -215,7 +215,7 @@ The server will run on: http://localhost:3000/red/
 To run tests, run the following command:
 
 ```bash
-yarn test
+pnpm test
 ```
 
 <!-- Deployment -->
