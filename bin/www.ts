@@ -1,17 +1,21 @@
 #!/usr/bin/env node
+/* eslint-disable no-use-before-define */
 
 /**
  * Module dependencies.
  */
 
-require('dotenv').config();
+import http from 'http';
+import bcryptjs from 'bcryptjs';
+import debug from 'debug';
+import dotenv from 'dotenv';
+import createError from 'http-errors';
+import RED from 'node-red';
+import app from '../app';
 
-const debug = require('debug')('node-red-template:server');
-const http = require('http');
-const RED = require('node-red');
-const bcryptjs = require('bcryptjs');
-const createError = require('http-errors');
-const app = require('../app');
+debug('express-template:server');
+
+dotenv.config();
 
 /**
  * Get port from environment and store in Express.
@@ -90,6 +94,7 @@ RED.start();
  */
 
 function normalizePort(val) {
+  // eslint-disable-next-line no-shadow
   const port = parseInt(val, 10);
 
   if (Number.isNaN(port)) {
@@ -137,6 +142,7 @@ function onError(error) {
 
 function onListening() {
   const addr = server.address();
-  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr!.port}`;
   debug(`Listening on ${bind}`);
 }
