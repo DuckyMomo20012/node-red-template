@@ -1,5 +1,6 @@
 <div align="center">
 
+  <img src="https://nodered.org/about/resources/media/node-red-icon-2.svg" alt="logo" width="200" height="auto" />
   <h1>Node-RED Template</h1>
 
   <p>
