@@ -222,9 +222,11 @@ pnpm test
 
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project on Heroku:
+To deploy this project run:
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+```bash
+pnpm deploy
+```
 
 <!-- Usage -->
 
