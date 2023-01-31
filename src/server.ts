@@ -13,7 +13,8 @@ import createError from 'http-errors';
 import RED from 'node-red';
 import app from './app';
 
-debug('express-template:server');
+const log = debug('http:server');
+const errorLog = debug('http:error');
 
 dotenv.config();
 
@@ -73,6 +74,8 @@ app.use((err, req, res, next) => {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
+  errorLog(err);
+
   // render the error page
   res.status(err.status || 500);
   res.render('error');
@@ -124,10 +127,12 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
+      // eslint-disable-next-line no-console
       console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
+      // eslint-disable-next-line no-console
       console.error(`${bind} is already in use`);
       process.exit(1);
       break;
@@ -144,5 +149,5 @@ function onListening() {
   const addr = server.address();
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr!.port}`;
-  debug(`Listening on ${bind}`);
+  log(`Listening on ${bind}`);
 }

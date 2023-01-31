@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node ./src/server",
     "dev": "nodemon",
-    "debug": "nodemon --inspect",
+    "debug": "DEBUG=http:* nodemon",
     "prepare": "husky install"
   },
   "dependencies": {
