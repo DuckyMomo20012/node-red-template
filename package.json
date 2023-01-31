@@ -4,9 +4,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "ts-node ./bin/www",
+    "start": "ts-node ./src/server",
     "dev": "nodemon",
-    "debug": "nodemon --inspect",
+    "debug": "DEBUG=http:* nodemon",
     "prepare": "husky install"
   },
   "dependencies": {

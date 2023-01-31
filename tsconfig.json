@@ -15,5 +15,5 @@
     "outDir": "./dist/out-tsc",
     "noErrorTruncation": true
   },
-  "include": ["routes", "bin/www.ts"]
+  "include": ["src", "tests"]
 }
