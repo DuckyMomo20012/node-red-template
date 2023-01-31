@@ -6,7 +6,6 @@
  */
 
 import http from 'http';
-import bcryptjs from 'bcryptjs';
 import debug from 'debug';
 import dotenv from 'dotenv';
 import createError from 'http-errors';
@@ -17,6 +16,9 @@ const log = debug('http:server');
 const errorLog = debug('http:error');
 
 dotenv.config();
+
+// eslint-disable-next-line import/first
+import nodeRedSettings from './nodered-settings';
 
 /**
  * Get port from environment and store in Express.
@@ -31,37 +33,17 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
-// Create the settings object - see default settings.js file for other options
-const settings = {
-  httpAdminRoot: '/red',
-  httpNodeRoot: '/api',
-  userDir: './.node-red/',
-  flowFile: 'flows.json',
-  functionGlobalContext: {}, // enables global context
-  adminAuth: {
-    type: 'credentials',
-    users: [
-      // This is admin user credentials
-      {
-        username: process.env.NODERED_USERNAME,
-        password: bcryptjs.hashSync(process.env.NODERED_PASSWORD, 8),
-        permissions: '*',
-      },
-    ],
-  },
-};
-
 // Initialise the runtime with a server and settings
-RED.init(server, settings);
+RED.init(server, nodeRedSettings);
 
 // NOTE: RED.httpAdmin and RED.httpNode only valid after 'init', so I have to move
 // error handling route from file 'app.js' to this file
 
 // Serve the editor UI from /red
-app.use(settings.httpAdminRoot, RED.httpAdmin);
+app.use(nodeRedSettings.httpAdminRoot, RED.httpAdmin);
 
 // Serve the http nodes UI from /api
-app.use(settings.httpNodeRoot, RED.httpNode);
+app.use(nodeRedSettings.httpNodeRoot, RED.httpNode);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
