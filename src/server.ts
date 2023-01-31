@@ -11,7 +11,7 @@ import debug from 'debug';
 import dotenv from 'dotenv';
 import createError from 'http-errors';
 import RED from 'node-red';
-import app from '../app';
+import app from './app';
 
 debug('express-template:server');
 
