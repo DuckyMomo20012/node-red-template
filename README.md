@@ -237,7 +237,7 @@ pnpm deploy
 
 ### :gear: Customize Node-RED
 
-- You can custom your Node-RED configuration in file `bin/www`.
+- You can custom your Node-RED configuration in file `nodered-settings.ts`.
 
   - `httpAdminRoot`: the root URL for the editor UI. If set to false, all admin
     endpoints are disabled. This includes both API endpoints and the editor UI. To
@@ -276,7 +276,7 @@ pnpm deploy
 - This template configure these settings:
 
   ```javascript
-  // bin/www
+  // nodered-settings.ts
   const settings = {
     httpAdminRoot: '/red',
     httpNodeRoot: '/api',
@@ -288,8 +288,11 @@ pnpm deploy
       users: [
         // This is admin user credentials
         {
-          username: process.env.NODERED_USERNAME,
-          password: bcryptjs.hashSync(process.env.NODERED_PASSWORD, 8),
+          username: process.env.NODERED_USERNAME || 'admin',
+          password: bcryptjs.hashSync(
+            process.env.NODERED_PASSWORD || 'password',
+            8,
+          ),
           permissions: '*',
         },
       ],
