@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: nodered-template
+    env: node
+    buildCommand: pnpm i
+    startCommand: pnpm start

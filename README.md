@@ -223,11 +223,9 @@ pnpm test
 
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project run:
+To deploy this project to Render:
 
-```bash
-pnpm deploy
-```
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/DuckyMomo20012/node-red-template)
 
 <!-- Usage -->
 
